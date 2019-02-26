@@ -1,0 +1,25 @@
+.event-page-summary {
+    font-family: Verdana, sans-serif;
+    margin: .625em 20em;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    border: 1px solid #CCC;
+    padding: .625em;
+
+    .form-field {
+        margin: .625em;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        app-input-field,
+        app-radio-button {
+            width: 100%
+        }
+        app-input-date-field {
+            width: 35%;
+        }
+    }
+}

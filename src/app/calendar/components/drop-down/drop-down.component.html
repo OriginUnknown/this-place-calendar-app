@@ -1,0 +1,6 @@
+<div [formGroup]="formParent" class="drop-down-field">
+  <select id="selectorId" name="selectorName" formControlName="{{ ctrlName }}"
+    (ngModelChange)="itemSelected($event);">
+      <option *ngFor="let option of selectorOptions" [ngValue]="option">{{ option }}</option>
+  </select>
+</div>

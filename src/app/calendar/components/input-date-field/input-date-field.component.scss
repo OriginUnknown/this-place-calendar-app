@@ -1,0 +1,13 @@
+.input-date-field {
+    display: flex;
+    align-items: baseline;
+    input[type=date] {
+        padding: .5em;
+        width: 100%;
+        margin-right: 1.25em;
+        &.sml {
+            width: 32.5%;
+            margin-right: .9375em;
+        }
+    }
+}

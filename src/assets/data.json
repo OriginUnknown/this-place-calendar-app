@@ -1,0 +1,344 @@
+{
+    "twentyNineteen": {
+        "february": {
+            "1": [
+                {
+                    "id": 1,
+                    "title": "Some Event #1",
+                    "description": "Some info about Some Event #1",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "orange"
+                },
+                {
+                    "id": 2,
+                    "title": "Some Event #2",
+                    "description": "Some info about Some Event #2",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "pink"
+                },
+                {
+                    "id": 3,
+                    "title": "Some Event #3",
+                    "description": "Some info about Some Event #3",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "red"
+                }
+            ],
+            "4": [
+                {
+                    "id": 1,
+                    "title": "Some Event #1",
+                    "description": "Some info about Some Event #1",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "blue"
+                },
+                {
+                    "id": 2,
+                    "title": "Some Event #2",
+                    "description": "Some info about Some Event #2",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "green"
+                },
+                {
+                    "id": 3,
+                    "title": "Meet Jane",
+                    "description": "Some info about Some Event #3",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "red"
+                }
+            ],
+            "6": [
+                {
+                    "id": 1,
+                    "title": "Some Event #1",
+                    "description": "Some info about Some Event #1",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "green"
+                },
+                {
+                    "id": 2,
+                    "title": "Some Event #2",
+                    "description": "Some info about Some Event #2",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "pink"
+                },
+                {
+                    "id": 3,
+                    "title": "Some Event #3",
+                    "description": "Some info about Some Event #3",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "red"
+                }
+            ],
+            "8": [
+                {
+                    "id": 1,
+                    "title": "Some Event #1",
+                    "description": "Some info about Some Event #1",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "orange"
+                },
+                {
+                    "id": 2,
+                    "title": "Some Event #2",
+                    "description": "Some info about Some Event #2",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "pink"
+                },
+                {
+                    "id": 3,
+                    "title": "Some Event #3",
+                    "description": "Some info about Some Event #3",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "red"
+                }
+            ],
+            "11": [
+                {
+                    "id": 1,
+                    "title": "Some Event #1",
+                    "description": "Some info about Some Event #1",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "blue"
+                },
+                {
+                    "id": 2,
+                    "title": "Some Event #2",
+                    "description": "Some info about Some Event #2",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "pink"
+                },
+                {
+                    "id": 3,
+                    "title": "Some Event #3",
+                    "description": "Some info about Some Event #3",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "red"
+                }
+            ],
+            "14": [
+                {
+                    "id": 1,
+                    "title": "Some Event #1",
+                    "description": "Some info about Some Event #1",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "orange"
+                },
+                {
+                    "id": 2,
+                    "title": "Some Event #2",
+                    "description": "Some info about Some Event #2",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "pink"
+                },
+                {
+                    "id": 3,
+                    "title": "Some Event #3",
+                    "description": "Some info about Some Event #3",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "blue"
+                }
+            ],
+            "15": [
+                {
+                    "id": 1,
+                    "title": "Some Event #1",
+                    "description": "Some info about Some Event #1",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "orange"
+                },
+                {
+                    "id": 2,
+                    "title": "Some Event #2",
+                    "description": "Some info about Some Event #2",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "pink"
+                },
+                {
+                    "id": 3,
+                    "title": "Some Event #3",
+                    "description": "Some info about Some Event #3",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "red"
+                }
+            ],
+            "18": [
+                {
+                    "id": 1,
+                    "title": "Some Event #1",
+                    "description": "Some info about Some Event #1",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "orange"
+                },
+                {
+                    "id": 2,
+                    "title": "Some Event #2",
+                    "description": "Some info about Some Event #2",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "pink"
+                },
+                {
+                    "id": 3,
+                    "title": "Some Event #3",
+                    "description": "Some info about Some Event #3",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "red"
+                }
+            ],
+            "19": [
+                {
+                    "id": 1,
+                    "title": "Some Event #1",
+                    "description": "Some info about Some Event #1",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "green"
+                },
+                {
+                    "id": 2,
+                    "title": "Some Event #2",
+                    "description": "Some info about Some Event #2",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "pink"
+                },
+                {
+                    "id": 3,
+                    "title": "Some Event #3",
+                    "description": "Some info about Some Event #3",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "red"
+                }
+            ],
+            "21": [
+                {
+                    "id": 1,
+                    "title": "Some Event #1",
+                    "description": "Some info about Some Event #1",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "blue"
+                },
+                {
+                    "id": 2,
+                    "title": "Some Event #2",
+                    "description": "Some info about Some Event #2",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "pink"
+                },
+                {
+                    "id": 3,
+                    "title": "Some Event #3",
+                    "description": "Some info about Some Event #3",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "red"
+                }
+            ],
+            "26": [
+                {
+                    "id": 1,
+                    "title": "Some Event #1",
+                    "description": "Some info about Some Event #1",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "orange"
+                },
+                {
+                    "id": 2,
+                    "title": "Some Event #2",
+                    "description": "Some info about Some Event #2",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "pink"
+                },
+                {
+                    "id": 3,
+                    "title": "Some Event #3",
+                    "description": "Some info about Some Event #3",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "red"
+                }
+            ],
+            "27": [
+                {
+                    "id": 1,
+                    "title": "Some Event #1",
+                    "description": "Some info about Some Event #1",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "orange"
+                },
+                {
+                    "id": 2,
+                    "title": "Some Event #2",
+                    "description": "Some info about Some Event #2",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "pink"
+                },
+                {
+                    "id": 3,
+                    "title": "Some Event #3",
+                    "description": "Some info about Some Event #3",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "red"
+                }
+            ],
+            "28": [
+                {
+                    "id": 1,
+                    "title": "Some Event #1",
+                    "description": "Some info about Some Event #1",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "green"
+                },
+                {
+                    "id": 2,
+                    "title": "Some Event #2",
+                    "description": "Some info about Some Event #2",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "pink"
+                },
+                {
+                    "id": 3,
+                    "title": "Some Event #3",
+                    "description": "Some info about Some Event #3",
+                    "startDateTime": 1550152800000,
+                    "endDateTime": 1550156400000,
+                    "labelColour": "blue"
+                }
+            ]
+        }
+    }
+}

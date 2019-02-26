@@ -1,0 +1,23 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+.days {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: #eee;
+    width: 100%;
+    li {
+        list-style-type: none;
+        width: 14.02%;
+        padding: .375rem;
+        height: 116px;
+        border: 1px solid #1ABC9C;
+        text-align: center;
+        font-size: .75rem;
+        overflow: auto;
+        color: #777;
+    }
+  }

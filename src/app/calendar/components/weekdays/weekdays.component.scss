@@ -1,0 +1,17 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+.weekdays {
+    margin: 0;
+    width: 100%;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: row;
+    li {
+      width: 14.02%;
+      color: #666;
+      text-align: center;
+      padding: .5rem;
+    }
+  }

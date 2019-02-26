@@ -1,0 +1,4 @@
+<div *ngFor="let event of todaysEvents"
+        class="event-title"
+        (click)="editEvent(event.id);">{{ event.startDateTime }} {{ event.title }}
+</div>

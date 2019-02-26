@@ -1,0 +1,6 @@
+<div [formGroup]="formParent" class="input-date-field">    
+    <input type="date" id="{{ labelId }}" formControlName="{{ ctrlName }}"
+      [class]="classes" [value]="val | date:'dd-MM-yyyy'" [required]=isRequired 
+      (input)="date=dateChanged($event.target.value)" />
+</div>
+

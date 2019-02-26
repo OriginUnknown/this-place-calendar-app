@@ -1,0 +1,5 @@
+<div [formGroup]="formParent" class="radio-button-options">
+      <div class="radio-button-group" *ngFor="let option of radioOptions">
+          <input type="radio" name="{{ ctrlName }}" class="{{ option }}" [value]="option" formControlName="{{ ctrlName }}" />
+      </div>
+</div>

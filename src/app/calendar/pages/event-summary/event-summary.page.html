@@ -1,0 +1,46 @@
+<div *ngIf="selectedEvent" class="event-page-summary">
+        <h1>{{ EVENT_SUMMARY_COPY.TITLE }}</h1>
+        <div class="form-container">
+            <form>
+                <div class="form-field">
+                    <app-label label-id="title" label-value="Title"></app-label>
+                    <app-input-field [form-parent]="eventSummaryForm" ctrl-name="title"
+                    [val]="selectedEvent.title" is-readonly=true></app-input-field>
+                    </div>
+                <div class="form-field">
+                    <app-label label-id="event-colour" label-value="Event Colour"></app-label>
+                    <app-radio-button [form-parent]="eventSummaryForm" ctrl-name="eventColour"
+                    [radio-options]="eventLabelColours"></app-radio-button>
+                </div>
+                <div class="form-field">
+                    <app-label label-id="description" label-value="Description"></app-label>
+                    <app-input-field [form-parent]="eventSummaryForm" ctrl-name="description"
+                        is-readonly=true [val]="selectedEvent.description"></app-input-field>
+                </div>
+                <div class="form-field">
+                    <app-label label-id="start-date" label-value="Start date"></app-label>
+                    <app-input-field [form-parent]="eventSummaryForm" ctrl-name="startDate"
+                        [val]="startDate" is-readonly=true></app-input-field>
+
+                    <app-label label-id="start-time" label-value="Start Time" classes="no-margin"></app-label>
+                    <app-input-field [form-parent]="eventSummaryForm" ctrl-name="startTime"
+                        [val]="startTime" is-readonly=true></app-input-field>
+                </div>
+                <div class="form-field">
+                    <app-label label-id="end-date" label-value="End date"></app-label>
+                        <app-input-field [form-parent]="eventSummaryForm" ctrl-name="endDate"
+                            [val]="endDate" is-readonly=true></app-input-field>
+    
+                    <app-label label-id="end-time" label-value="End Time" classes="no-margin"></app-label>
+                        <app-input-field [form-parent]="eventSummaryForm" ctrl-name="endTime"
+                            [val]="endTime" is-readonly=true></app-input-field>
+                    </div> 
+    
+                <div class="form-field">
+                    <button [routerLink]="['/edit-event', this.dateId, this.eventId]">Edit event</button>
+                    <button [routerLink]="['/calendar']">Cancel</button>
+                    <button (click)="removeSelectedEvent();">Delete Event</button>
+                </div>
+            </form>
+        </div>
+</div>

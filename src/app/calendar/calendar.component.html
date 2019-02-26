@@ -1,0 +1,18 @@
+<div *ngIf="eventsHaveLoaded" class="calendar-container">
+  <div class="add-event">
+    <a [routerLink]="['/add-event']">Add Event</a>
+  </div>
+  <app-current-month 
+        [selected-month]="month"
+        [selected-year]="year">
+  </app-current-month>
+  <app-weekdays 
+        [week-days]="weekDays">
+  </app-weekdays>
+  <app-days
+    [start-day-from]="startDayOfSelectedMonth"
+    [num-of-days-in-month]="numOfDaysInMonth"
+    [num-of-weeks-in-month]="numOfWeeksInMonth"
+    [events-for-month]="calendarEventsForSelectedMonth">
+  </app-days>
+</div>

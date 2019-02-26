@@ -1,0 +1,65 @@
+<div class="add-page-container">
+    <h1>{{ ADD_EVENT_COPY.TITLE }}</h1>
+    <div class="form-container">
+        <form [formGroup]="addEventForm" (ngSubmit)="onSaveEventForm();">
+                <div class="form-field">
+                    <app-label label-id="title" label-value="Title"></app-label>
+                    <app-input-field [form-parent]="addEventForm" ctrl-name="title" placeholder="Event title"
+                        [val]="defaultTitleCopy" required=true></app-input-field>
+                </div>
+            <div class="form-field">
+                <app-label label-id="event-colour" label-value="Event Colour"></app-label>
+                <app-radio-button [form-parent]="addEventForm" ctrl-name="eventColour"
+                [radio-options]="eventLabelColours"></app-radio-button>
+            </div>
+            <div class="form-field">
+                <app-label label-id="description" label-value="Description"></app-label>
+                <app-input-field [form-parent]="addEventForm" ctrl-name="description"
+                    [val]="defaultDescriptionCopy" placeholder="What's the meeting about?"></app-input-field>
+            </div>
+            <div class="form-field">
+                <app-label label-id="start-date" label-value="Start date"></app-label>
+                    <app-input-date-field
+                        [form-parent]="addEventForm" 
+                        ctrl-name="startDate"
+                        [val]="todaysDateAsString"
+                        required=true>
+                    </app-input-date-field>
+
+                    <app-label label-id="start-time" label-value="Start Time" classes="no-margin"></app-label>
+                    <app-drop-down
+                        [form-parent]="addEventForm"
+                        [selector-id]="start-time"
+                        [selector-name]="startTime"
+                        [selector-options]="startTimeSlots"
+                        ctrl-name="startTime"
+                        (on-item-selected)="onStartTimeSelected($event);">
+                    </app-drop-down>
+            </div>    
+            <div class="form-field">
+                    <app-label label-id="end-date" label-value="End date"></app-label>
+                    <app-input-date-field
+                        [form-parent]="addEventForm" 
+                        ctrl-name="endDate"
+                        [val]="todaysDateAsString"
+                        required=true>
+                    </app-input-date-field>
+                   
+                    <app-label label-id="end-time" label-value="End Time" classes="no-margin"></app-label>
+                    <app-drop-down
+                        [form-parent]="addEventForm"
+                        [selector-id]="end-time"
+                        [selector-name]="endTime"
+                        [selector-options]="endTimeSlots"
+                        ctrl-name="endTime"
+                        (on-item-selected)="onEndTimeSelected($event);">
+                    </app-drop-down>
+            </div>
+
+            <div class="form-field">
+                <button>Save event</button>
+                <button [routerLink]="['/calendar']">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

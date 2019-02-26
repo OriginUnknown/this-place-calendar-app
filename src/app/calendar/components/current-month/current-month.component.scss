@@ -1,0 +1,37 @@
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+.month {
+    width: 100%;
+    height: 6.25rem;
+    background: #1ABC9C;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    ul {
+      width: 100%;
+      margin: 2rem;
+      padding: 0;
+      display: flex;
+    }
+    ul li {
+      color: #FFF;
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: .1875rem;
+      flex-grow: 2;
+      &:last-child {
+        flex-grow: 0;
+      }
+    }
+    .prev {
+      float: left;
+      padding-top: 10px;
+    }
+    .next {
+      float: right;
+      padding-top: 10px;
+    }
+  }

@@ -1,0 +1,16 @@
+<ng-template #printBlankCells>
+        <span class="empty-cell"></span>
+</ng-template>
+
+<div class="days-row" *ngFor="let week of calendarMonth">
+    <ul class="days">
+        <li *ngFor="let day of week">
+            <div class="date">{{ day }}</div>
+            <span *ngIf="eventsForTheMonth.hasOwnProperty(day)">
+                <app-event-headline
+                    [todays-events]="eventsForTheMonth[day]"
+                    [date-of-event]="day"></app-event-headline>
+            </span>
+        </li>
+    </ul>
+</div>

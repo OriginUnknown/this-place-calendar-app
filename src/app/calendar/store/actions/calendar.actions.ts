@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { EventDetails } from '../../model/event.model';
+import { EventDetails, EventsCollection } from '../../model/event.model';
 
 export interface ActionWithPayload extends Action {
     payload?: any;
@@ -16,7 +16,7 @@ export class AddEvent implements ActionWithPayload {
 
 export class EditEvent implements ActionWithPayload {
     readonly type = EDIT_EVENT;
-    constructor(public payload: EventDetails) { }
+    constructor(public payload: EventsCollection) { }
 }
 
 export class DeleteEvent implements ActionWithPayload {

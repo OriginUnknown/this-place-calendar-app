@@ -4,15 +4,14 @@ import * as fromCalendarReducer from './reducers/calendar.reducer';
 
 export * from './actions';
 export * from './reducers';
+export * from './selectors';
 export { CalendarState } from '../store/model/calendar.model';
 
-// AppState interface is a consolidation of each of the domain state's interfaces
-export interface AppState {
+export interface CalendarAppState {
     readonly calendar: CalendarState;
 }
 
-// the AppReducer is maps the relevant reducers to the domain states
-export const calendarReducers: ActionReducerMap<AppState> = {
+export const calendarReducers: ActionReducerMap<CalendarAppState> = {
     calendar: fromCalendarReducer.reducer
 };
 

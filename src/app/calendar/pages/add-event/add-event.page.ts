@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CalendarService } from '../../services/calendar.service';
 import * as CALENDAR_COPY from '../../../resources/i18n/en-GB';
+import * as fromStore from '../../../calendar/store';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-calendar',
@@ -23,7 +26,9 @@ export class AddEventComponent implements OnInit {
   public defaultEventColour: string;
 
   constructor(
-    private calendarService: CalendarService
+    private calendarService: CalendarService,
+    private router: Router,
+    private _store: Store<fromStore.CalendarAppState>
     ) { }
 
   ngOnInit() {
@@ -47,38 +52,13 @@ export class AddEventComponent implements OnInit {
   }
 
   public onSaveEventForm(): void {
-    const form: any = this.addEventForm.value;
-    const startDateObj = new Date(form.startDateObj);
-    const month: string = CALENDAR_COPY.APP_CONST.CALENDAR.MONTHS[startDateObj.getMonth()].toLowerCase();
-    const date: number = startDateObj.getDate();
-    const startDateTime: number = this.calendarService.createNewDateObj(form.startDate, '-', form.startTime, ':').getTime();
-    const endDateTime: number = this.calendarService.createNewDateObj(form.endDate, '-', form.endTime, ':').getTime();
-    if (this.addEventForm.valid) {
-      if (this.calendarService.endDateTimeIsLessThanStart(startDateTime, endDateTime)) {
-        alert(`End date cannot be less than start date. Please amend your dates`);
-        return;
-      }
-      const copyEvent = {
-        ...this.addEventForm.value,
-        metadata: {
-          date,
-          month
-        }
-      };
-      copyEvent['startDateTime'] = startDateTime;
-      copyEvent['endDateTime'] = endDateTime;
-      delete copyEvent.startDate;
-      delete copyEvent.startTime;
-      delete copyEvent.endDate;
-      delete copyEvent.endTime;
-      // remove redundant props -> destructing not working
-      //   const {
-      //     startDate,
-      //     startTime,
-      //     endDate,
-      //     endTime,
-      //     ...copyEvent
-      // } = newEvent;
+    const newEvent = this.calendarService.validateForm(this.addEventForm);
+    if (newEvent) {
+      this._store.dispatch({
+        type: fromStore.ADD_EVENT,
+        payload: newEvent
+      });
+      this.router.navigate(['/calendar']);
     } else {
       // revise to use modal instead of aler from the sharedModule directory
       alert(
@@ -88,26 +68,14 @@ export class AddEventComponent implements OnInit {
     }
   }
 
-  public onStartTimeSelected(event): void {
-    // undo previous time slot arrays for start and end slot
+  public onStartTimeSelected(event: string): void {
     this.startTimeSlots = this.calendarService.getTimeSlots();
-    this.endTimeSlots = this.calendarService.getTimeSlots();
-    this.endTimeSlots = this.endTimeSlots.filter((slot, i) => {
-      if (i > this.startTimeSlots.indexOf(event)) {
-        return slot;
-      }
-    });
+    this.endTimeSlots = this.calendarService.filterEndTimeSlots(this.startTimeSlots, event);
   }
 
-  public onEndTimeSelected(event): void {
-    // undo previous time slot arrays for start and end slot
-    this.startTimeSlots = this.calendarService.getTimeSlots();
+  public onEndTimeSelected(event: string): void {
     this.endTimeSlots = this.calendarService.getTimeSlots();
-    this.startTimeSlots = this.startTimeSlots.filter((slot, i) => {
-      if (i < this.startTimeSlots.indexOf(event)) {
-        return slot;
-      }
-    });
+    this.startTimeSlots = this.calendarService.filterStartTimeSlots(this.endTimeSlots, event);
   }
 
 }

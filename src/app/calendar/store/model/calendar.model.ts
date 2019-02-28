@@ -13,8 +13,10 @@ export const initialState: CalendarState = {
                     id: 923928,
                     title: 'Scrum of scrum meeting',
                     description: 'Catch up with all the scrum masters',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '14:00:00',
+                    startDateTime: 1549029600000,
+                    endTime: '15:00:00',
+                    endDateTime: 1549033200000,
                     labelColour: 'orange',
                     metadata: {
                         month: 'february',
@@ -22,13 +24,15 @@ export const initialState: CalendarState = {
                     }
                 }
             ],
-            11: [
+            14: [
                 {
                     id: 923928,
                     title: 'Scrum of scrum meeting',
                     description: 'Catch up with all the scrum masters',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '10:00:00',
+                    startDateTime: 1550181600000,
+                    endTime: '11:30:00',
+                    endDateTime: 1550143800000,
                     labelColour: 'orange',
                     metadata: {
                         month: 'february',
@@ -39,8 +43,10 @@ export const initialState: CalendarState = {
                     id: 182671,
                     title: 'Interiew project manager',
                     description: '',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '16:00:00',
+                    startDateTime: 1550161800000,
+                    endTime: '17:30:00',
+                    endDateTime: 1550165400000,
                     labelColour: 'pink',
                     metadata: {
                         month: 'february',
@@ -53,8 +59,10 @@ export const initialState: CalendarState = {
                     id: 973894,
                     title: 'Walk Archie the dog',
                     description: '1 hour walk in Victoria Park',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '12:00:00',
+                    startDateTime: 1550491200000,
+                    endTime: '13:00:00',
+                    endDateTime: 1550494800000,
                     labelColour: 'red',
                     metadata: {
                         month: 'february',
@@ -67,8 +75,10 @@ export const initialState: CalendarState = {
                     id: 230982,
                     title: 'Scrum of scrum meeting',
                     description: 'Catch up with all the scrum masters',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '09:00:00',
+                    startDateTime: 1551171600000,
+                    endTime: '11:00:00',
+                    endDateTime: 1551178800000,
                     labelColour: 'orange',
                     metadata: {
                         month: 'february',
@@ -79,8 +89,10 @@ export const initialState: CalendarState = {
                     id: 182671,
                     title: 'Interiew project manager',
                     description: '',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '15:00:00',
+                    startDateTime: 1551193200000,
+                    endTime: '16:00:00',
+                    endDateTime: 1551196800000,
                     labelColour: 'pink',
                     metadata: {
                         month: 'february',
@@ -93,8 +105,10 @@ export const initialState: CalendarState = {
                     id: 102938,
                     title: 'Conf call with Angie',
                     description: 'Bitcoin summary part 2',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '14:00:00',
+                    startDateTime: 1551196800000,
+                    endTime: '15:00:00',
+                    endDateTime: 1551366000000,
                     labelColour: 'red',
                     metadata: {
                         month: 'february',
@@ -109,8 +123,10 @@ export const initialState: CalendarState = {
                     id: 923928,
                     title: 'Scrum of scrum meeting',
                     description: 'Catch up with all the scrum masters',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '14:00:00',
+                    startDateTime: 1551794400000,
+                    endTime: '15:00:00',
+                    endDateTime: 1551798000000,
                     labelColour: 'orange',
                     metadata: {
                         month: 'march',
@@ -118,29 +134,33 @@ export const initialState: CalendarState = {
                     }
                 }
             ],
-            16: [
+            15: [
                 {
                     id: 923928,
                     title: 'Scrum of scrum meeting',
                     description: 'Catch up with all the scrum masters',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '09:00:00',
+                    startDateTime: 1552640400000,
+                    endTime: '11:00:00',
+                    endDateTime: 1552647600000,
                     labelColour: 'orange',
                     metadata: {
                         month: 'march',
-                        date: 16
+                        date: 15
                     }
                 },
                 {
                     id: 182671,
                     title: 'Interiew project manager',
                     description: '',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '14:00:00',
+                    startDateTime: 1552658400000,
+                    endTime: '17:00:00',
+                    endDateTime: 1552669200000,
                     labelColour: 'pink',
                     metadata: {
                         month: 'march',
-                        date: 16
+                        date: 15
                     }
                 }
             ],
@@ -149,8 +169,10 @@ export const initialState: CalendarState = {
                     id: 973894,
                     title: 'Walk Archie the dog',
                     description: '1 hour walk in Victoria Park',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '08:30:00',
+                    startDateTime: 1553070600000,
+                    endTime: '09:30:00',
+                    endDateTime: 1553074200000,
                     labelColour: 'red',
                     metadata: {
                         month: 'march',
@@ -163,8 +185,10 @@ export const initialState: CalendarState = {
                     id: 230982,
                     title: 'Scrum of scrum meeting',
                     description: 'Catch up with all the scrum masters',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '13:00:00',
+                    startDateTime: 1553259600000,
+                    endTime: '15:00:00',
+                    endDateTime: 1553266800000,
                     labelColour: 'orange',
                     metadata: {
                         month: 'march',
@@ -175,8 +199,10 @@ export const initialState: CalendarState = {
                     id: 182671,
                     title: 'Interiew project manager',
                     description: '',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '17:00:00',
+                    startDateTime: 1553274000000,
+                    endTime: '18:00:00',
+                    endDateTime: 1553277600000,
                     labelColour: 'pink',
                     metadata: {
                         month: 'march',
@@ -189,8 +215,10 @@ export const initialState: CalendarState = {
                     id: 102938,
                     title: 'Conf call with Angie',
                     description: 'Bitcoin summary part 2',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '10:00:00',
+                    startDateTime: 1553853600000,
+                    endTime: '10:30:00',
+                    endDateTime: 1553855400000,
                     labelColour: 'red',
                     metadata: {
                         month: 'march',
@@ -205,8 +233,10 @@ export const initialState: CalendarState = {
                     id: 923928,
                     title: 'Scrum of scrum meeting',
                     description: 'Catch up with all the scrum masters',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '14:00:00',
+                    startDateTime: 1554732000000,
+                    endTime: '15:30:00',
+                    endDateTime: 1554737400000,
                     labelColour: 'orange',
                     metadata: {
                         month: 'april',
@@ -219,8 +249,10 @@ export const initialState: CalendarState = {
                     id: 923928,
                     title: 'Scrum of scrum meeting',
                     description: 'Catch up with all the scrum masters',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '11:30:00',
+                    startDateTime: 1555068600000,
+                    endTime: '12:30:00',
+                    endDateTime: 1555072200000,
                     labelColour: 'orange',
                     metadata: {
                         month: 'april',
@@ -231,8 +263,10 @@ export const initialState: CalendarState = {
                     id: 182671,
                     title: 'Interiew project manager',
                     description: '',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '14:00:00',
+                    startDateTime: 1555079400000,
+                    endTime: '15:00:00',
+                    endDateTime: 1555083000000,
                     labelColour: 'pink',
                     metadata: {
                         month: 'april',
@@ -245,8 +279,10 @@ export const initialState: CalendarState = {
                     id: 973894,
                     title: 'Walk Archie the dog',
                     description: '1 hour walk in Victoria Park',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '13:00:00',
+                    startDateTime: 1555506000000,
+                    endTime: '14:30:00',
+                    endDateTime: 1555509600000,
                     labelColour: 'red',
                     metadata: {
                         month: 'april',
@@ -259,8 +295,10 @@ export const initialState: CalendarState = {
                     id: 230982,
                     title: 'Scrum of scrum meeting',
                     description: 'Catch up with all the scrum masters',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '09:00:00',
+                    startDateTime: 1556182800000,
+                    endTime: '09:30:00',
+                    endDateTime: 1556184600000,
                     labelColour: 'orange',
                     metadata: {
                         month: 'april',
@@ -271,8 +309,10 @@ export const initialState: CalendarState = {
                     id: 182671,
                     title: 'Interiew project manager',
                     description: '',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '11:00:00',
+                    startDateTime: 1556190000000,
+                    endTime: '13:00:00',
+                    endDateTime: 1556197200000,
                     labelColour: 'pink',
                     metadata: {
                         month: 'april',
@@ -285,8 +325,10 @@ export const initialState: CalendarState = {
                     id: 102938,
                     title: 'Conf call with Angie',
                     description: 'Bitcoin summary part 2',
-                    startDateTime: 1550152800000,
-                    endDateTime: 1550156400000,
+                    startTime: '14:00:00',
+                    startDateTime: 1556632800000,
+                    endTime: '16:00:00',
+                    endDateTime: 1556640000000,
                     labelColour: 'red',
                     metadata: {
                         month: 'april',

@@ -1,7 +1,7 @@
 <div *ngIf="selectedEvent" class="event-page-summary">
         <h1>{{ EVENT_SUMMARY_COPY.TITLE }}</h1>
         <div class="form-container">
-            <form>
+            <form [formGroup]="eventSummaryForm" (ngSubmit)="removeSelectedEvent();">
                 <div class="form-field">
                     <app-label label-id="title" label-value="Title"></app-label>
                     <app-input-field [form-parent]="eventSummaryForm" ctrl-name="title"
@@ -39,7 +39,7 @@
                 <div class="form-field">
                     <button [routerLink]="['/edit-event', this.dateId, this.eventId]">Edit event</button>
                     <button [routerLink]="['/calendar']">Cancel</button>
-                    <button (click)="removeSelectedEvent();">Delete Event</button>
+                    <button>Delete Event</button>
                 </div>
             </form>
         </div>

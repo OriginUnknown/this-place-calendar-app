@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
 import { CalendarService } from './services/calendar.service';
 import * as CALENDAR_COPY from '../resources/i18n/en-GB'; // would modify to use the translateService
 import { EventDetails } from './model/event.model';
-import * as fromStore from '../calendar/store';
 
 @Component({
   selector: 'app-calendar',
@@ -23,14 +20,12 @@ export class CalendarComponent implements OnInit {
   public numOfDaysInMonth: number;
   public startDayOfSelectedMonth: number;
   public numOfWeeksInMonth: number;
-  public eventsHaveLoaded: boolean = false;
-  public calendarEventsForSelectedMonth: {[key: string]: Array<EventDetails>};
+
+  public calendarEventsForSelectedMonth: {[key: number]: Array<EventDetails>};
   public numOfDaysPerMonth: Array<number>;
-  public getEventsForTheMonth$: Observable<any>;
 
   constructor(
-    private calendarService: CalendarService,
-    private store: Store<fromStore.CalendarState>
+    private calendarService: CalendarService
   ) { }
 
   ngOnInit() {
@@ -42,23 +37,21 @@ export class CalendarComponent implements OnInit {
         month: number = this.calendarService.getTodaysDate().getMonth(),
         date: number = this.calendarService.getTodaysDate().getDate()
     ): void {
-      // this.getEventsForTheMonth$ = this.store.select(fromStore.getAllEventsForSelectedMonth());
-    this.calendarService.setSelectedDate(year, month, date);
-    this.selectedDate = this.calendarService.getSelectedDate();
-    this.date = this.selectedDate.getDate().toString();
-    this.day = CALENDAR_COPY.APP_CONST.CALENDAR.WEEKDAYS[this.selectedDate.getDay()];
-    this.month = CALENDAR_COPY.APP_CONST.CALENDAR.MONTHS[this.selectedDate.getMonth()];
-    this.year = this.selectedDate.getFullYear().toString();
-    this.weekDays = CALENDAR_COPY.APP_CONST.CALENDAR.WEEKDAYS;
-    this.numOfDaysPerMonth = this.calendarService.getNumOfDaysPerMonth(Number(this.year));
-    this.numOfDaysInMonth = this.numOfDaysPerMonth[this.selectedDate.getMonth()];
-    this.startDayOfSelectedMonth = this.getStartDayOfSelectedMonth();
-    this.numOfWeeksInMonth = this.getNumOfWeeksInMonth(this.numOfDaysInMonth);
-    this.calendarService.getData().subscribe( data => {
-      this.calendarEventsForSelectedMonth = this.getCalendarEvents(data, this.month);
-      this.eventsHaveLoaded = true;
-    },
-    err => console.log('Unable to fetch data for this month'));
+      this.calendarService.getEvents$().subscribe( data => {
+      this.calendarService.setSelectedDate(year, month, date);
+      this.selectedDate = this.calendarService.getSelectedDate();
+      this.date = this.selectedDate.getDate().toString();
+      this.day = CALENDAR_COPY.APP_CONST.CALENDAR.WEEKDAYS[this.selectedDate.getDay()];
+      this.month = CALENDAR_COPY.APP_CONST.CALENDAR.MONTHS[this.selectedDate.getMonth()].toLowerCase();
+      this.year = this.selectedDate.getFullYear().toString();
+      this.weekDays = CALENDAR_COPY.APP_CONST.CALENDAR.WEEKDAYS;
+      this.numOfDaysPerMonth = this.calendarService.getNumOfDaysPerMonth(Number(this.year));
+      this.numOfDaysInMonth = this.numOfDaysPerMonth[this.selectedDate.getMonth()];
+      this.startDayOfSelectedMonth = this.getStartDayOfSelectedMonth();
+      this.numOfWeeksInMonth = this.getNumOfWeeksInMonth(this.numOfDaysInMonth);
+      this.calendarEventsForSelectedMonth = data.events[this.month];
+    });
+
   }
 
   public getStartDayOfSelectedMonth (): number {
@@ -78,22 +71,4 @@ export class CalendarComponent implements OnInit {
       return 4;
     }
   }
-
-  public getCalendarEvents(calendar: any, month: string): {[key: string]: Array<EventDetails>} {
-    return this.formatTimestamps(calendar.twentyNineteen[month.toLowerCase()]);
-  }
-
-  public formatTimestamps(
-    calendarMonth: {[key: string]: Array<EventDetails>}
-  ): {[key: string]: Array<EventDetails>} {
-    for (let day in calendarMonth) {
-      calendarMonth[day] = calendarMonth[day].map((event: EventDetails) => ({
-        ...event,
-        startDateTime: new Date(event.startDateTime).toLocaleTimeString(),
-        endDateTime: new Date(event.endDateTime).toLocaleTimeString()
-      }));
-    }
-    return calendarMonth;
-  }
-
 }

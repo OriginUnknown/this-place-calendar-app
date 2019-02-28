@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { FormGroup, FormControl } from '@angular/forms';
 import { CalendarService } from '../../services/calendar.service';
 import * as CALENDAR_COPY from '../../../resources/i18n/en-GB';
 import { EventDetails } from '../../model/event.model';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import * as fromStore from '../../../calendar/store';
 
 @Component({
   selector: 'app-event-summary',
@@ -20,45 +22,55 @@ export class EventSummaryComponent implements OnInit {
   public startTime: string;
   public endDate: string;
   public endTime: string;
-  public dateId: string;
+  public dateId: number;
   public eventId: number;
+  public month: string;
 
   constructor(
     private route: ActivatedRoute,
+    private _store: Store<fromStore.CalendarAppState>,
+    private router: Router,
     private calendarService: CalendarService
     ) { }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
-      this.calendarService.getData().subscribe( (data: any) => {
-        this.dateId = params['date'];
+      this.calendarService.getEvents$().subscribe( (data: any) => {
+        this.dateId = Number(params['date']);
         this.eventId = Number(params['id']);
         this.selectedMonthNum = this.calendarService.getSelectedDate().getMonth();
-        const month = CALENDAR_COPY.APP_CONST.CALENDAR.MONTHS[this.selectedMonthNum].toLowerCase();
-        this.selectedEvent = data.twentyNineteen[month][this.dateId].filter((event: EventDetails) => {
-          if (event.id === this.eventId) {
-            return event;
-          }
-        })[0];
-        this.startDate = new Date(this.selectedEvent.startDateTime).toDateString();
-        this.startTime = new Date(this.selectedEvent.startDateTime).toLocaleTimeString();
-        this.endDate = new Date(this.selectedEvent.endDateTime).toDateString();
-        this.endTime = new Date(this.selectedEvent.endDateTime).toLocaleTimeString();
-        this.eventSummaryForm = new FormGroup({
-          'title': new FormControl(this.selectedEvent.title),
-          'description': new FormControl(this.selectedEvent.description),
-          'eventColour': new FormControl({value: this.selectedEvent.labelColour, disabled: true}),
-          'startDate': new FormControl(this.startDate),
-          'startTime': new FormControl(this.startTime),
-          'endDate': new FormControl(this.endDate),
-          'endTime': new FormControl(this.endTime)
-        });
+        this.month = CALENDAR_COPY.APP_CONST.CALENDAR.MONTHS[this.selectedMonthNum].toLowerCase();
+        this.selectedEvent = data.events[this.month][this.dateId].filter((event: EventDetails) => event.id === this.eventId)[0];
+        if (this.selectedEvent) {
+          this.startDate = new Date(this.selectedEvent.startDateTime).toDateString();
+          this.startTime = new Date(this.selectedEvent.startDateTime).toLocaleTimeString();
+          this.endDate = new Date(this.selectedEvent.endDateTime).toDateString();
+          this.endTime = new Date(this.selectedEvent.endDateTime).toLocaleTimeString();
+          this.eventSummaryForm = new FormGroup({
+            'id': new FormControl(this.selectedEvent.id),
+            'title': new FormControl(this.selectedEvent.title),
+            'description': new FormControl(this.selectedEvent.description),
+            'eventColour': new FormControl({value: this.selectedEvent.labelColour, disabled: true}),
+            'startDate': new FormControl(this.startDate),
+            'startTime': new FormControl(this.startTime),
+            'endDate': new FormControl(this.endDate),
+            'endTime': new FormControl(this.endTime)
+          });
+        }
       });
     });
   }
 
   public removeSelectedEvent(): void {
-    console.log(`Delete event. Month id: ${this.selectedMonthNum}, date: ${this.dateId} and event id: ${this.eventId}`);
+    const metadata = {};
+    metadata['month'] = this.month;
+    metadata['date'] = this.dateId;
+    const eventToDelete: EventDetails = { ...this.eventSummaryForm.value, metadata };
+    this._store.dispatch({
+      type: fromStore.DELETE_EVENT,
+      payload: eventToDelete
+    });
+    this.router.navigate(['/calendar']);
   }
 
 }

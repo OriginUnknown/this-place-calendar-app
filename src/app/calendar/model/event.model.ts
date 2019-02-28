@@ -6,12 +6,14 @@ export interface EventMetadata {
 export interface EventBrief {
     id: number;
     title: string;
-    startDateTime: number | string;
+    startTime: string;
 }
 
 export interface EventDetails extends EventBrief {
     description: string;
-    endDateTime: number | string;
+    startDateTime: number;
+    endTime: string;
+    endDateTime: number;
     labelColour: string;
     metadata: EventMetadata;
 }

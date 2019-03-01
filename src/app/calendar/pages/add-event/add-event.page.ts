@@ -43,7 +43,7 @@ export class AddEventComponent implements OnInit {
       this.addEventForm = new FormGroup({
         'title': new FormControl(this.defaultTitleCopy, Validators.required),
         'description': new FormControl(this.defaultDescriptionCopy),
-        'eventColour': new FormControl(this.defaultEventColour),
+        'labelColour': new FormControl(this.defaultEventColour),
         'startDate': new FormControl(this.todaysDateAsString, Validators.required),
         'startTime': new FormControl(null, Validators.required),
         'endDate': new FormControl(this.todaysDateAsString, Validators.required),

@@ -63,7 +63,7 @@ export class EditEventComponent implements OnInit {
             'id': new FormControl(this.selectedEvent.id),
             'title': new FormControl(this.selectedEvent.title),
             'description': new FormControl(this.selectedEvent.description),
-            'eventColour': new FormControl(this.selectedEvent.labelColour),
+            'labelColour': new FormControl(this.selectedEvent.labelColour),
             'startDate': new FormControl(this.startDate),
             'startTime': new FormControl(this.startTime),
             'endDate': new FormControl(this.endDate),

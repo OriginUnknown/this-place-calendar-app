@@ -11,8 +11,6 @@ export class CurrentMonthComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    console.log('from current month banner', this.currentMonth);
-  }
+  ngOnInit() { }
 
 }

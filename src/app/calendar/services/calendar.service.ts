@@ -118,8 +118,17 @@ export class CalendarService {
     const startDateObj = new Date(form.value.startDate);
     const month: string = CALENDAR_COPY.APP_CONST.CALENDAR.MONTHS[startDateObj.getMonth()].toLowerCase();
     const date: number = startDateObj.getDate();
-    const startDateTime: number = this.createNewDateObj(form.value.startDate, '-', form.value.startTime, ':').getTime();
-    const endDateTime: number = this.createNewDateObj(form.value.endDate, '-', form.value.endTime, ':').getTime();
+    let startDateTime: number;
+    let endDateTime: number;
+    if (type === 'AMEND') {
+      startDateTime = new Date(`${form.value.startDate} ${form.value.startTime}`).getTime();
+      endDateTime = new Date(`${form.value.endDate} ${form.value.endTime}`).getTime();
+    } else {
+      startDateTime = this.createNewDateObj(form.value.startDate, '-', form.value.startTime, ':').getTime();
+      endDateTime = this.createNewDateObj(form.value.endDate, '-', form.value.endTime, ':').getTime();
+      delete form.value.startDate;
+      delete form.value.endDate;
+    }
     if (form.valid) {
       if (this.endDateTimeIsLessThanStart(startDateTime, endDateTime)) {
         alert(`End date cannot be less than start date. Please amend your dates`);

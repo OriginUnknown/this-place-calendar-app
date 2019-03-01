@@ -150,6 +150,20 @@ export const initialState: CalendarState = {
                     }
                 },
                 {
+                    id: 923928,
+                    title: 'Organise Hackathon with Jilly',
+                    description: 'Catch up with all the scrum masters',
+                    startTime: '12:30:00',
+                    startDateTime: 1552653000000,
+                    endTime: '13:30:00',
+                    endDateTime: 1552656600000,
+                    labelColour: 'orange',
+                    metadata: {
+                        month: 'march',
+                        date: 15
+                    }
+                },
+                {
                     id: 182671,
                     title: 'Interiew project manager',
                     description: '',

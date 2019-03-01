@@ -59,7 +59,7 @@ export class CalendarComponent implements OnInit {
   }
 
   public getNumOfWeeksInMonth(month: number): number {
-    if (this.startDayOfSelectedMonth === 6) {
+    if (this.startDayOfSelectedMonth > 4) {
       switch (month) {
         case 31:
         case 30:

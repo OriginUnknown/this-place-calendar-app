@@ -84,10 +84,6 @@ export class EditEventComponent implements OnInit {
     this.startTimeSlots = this.calendarService.filterStartTimeSlots(this.endTimeSlots, selectedOption);
   }
 
-  public saveAmendedEvent(): void {
-    console.log(`Delete event. Month id: ${this.selectedMonthNum}, date: ${this.dateId} and event id: ${this.eventId}`);
-  }
-
   public removeEventFromPreviousPosition(month: EventsInMonth): EventsInMonth {
     const monthObj: EventsInMonth = {};
     for (let dt in month) {

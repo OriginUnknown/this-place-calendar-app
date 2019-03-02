@@ -71,4 +71,20 @@ export class CalendarComponent implements OnInit {
       return 4;
     }
   }
+
+  public getEventsForNextMonth(): void {
+    if (this.selectedDate.getMonth() === 11) {
+      this.configureCalendar((this.selectedDate.getFullYear() + 1), 0, 1);
+    } else {
+      this.configureCalendar(this.selectedDate.getFullYear(), (this.selectedDate.getMonth() + 1), 1);
+    }
+  }
+
+  public getEventsForPrevMonth(): void {
+    if (this.selectedDate.getMonth() === 0) {
+      this.configureCalendar((this.selectedDate.getFullYear() - 1), 11, 1);
+    } else {
+      this.configureCalendar(this.selectedDate.getFullYear(), (this.selectedDate.getMonth() - 1), 1);
+    }
+  }
 }

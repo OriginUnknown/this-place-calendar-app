@@ -5,7 +5,7 @@ import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalendarModule } from './calendar/calendar.module';
-import { ModalComponent } from './components/modal/modal.component';
+import { ModalComponent } from './sharedModule/modal/modal.component';
 
 export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
   return function(state, action) {
@@ -19,8 +19,8 @@ export const metaReducers: MetaReducer<any>[] = [debug];
 
 @NgModule({
   declarations: [
-    ModalComponent,
     AppComponent,
+    ModalComponent,
   ],
   imports: [
     CalendarModule,

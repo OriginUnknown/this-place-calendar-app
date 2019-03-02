@@ -4,7 +4,9 @@
   </div>
   <app-current-month 
         [selected-month]="month"
-        [selected-year]="year">
+        [selected-year]="year"
+        (get-next-month)="getEventsForNextMonth();"
+        (get-prev-month)="getEventsForPrevMonth();">
   </app-current-month>
   <app-weekdays 
         [week-days]="weekDays">

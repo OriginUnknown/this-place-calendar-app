@@ -26,6 +26,9 @@ ul {
         flex-grow: 0;
       }
     }
+    .prev, .next {
+      cursor: pointer;
+    }
     .prev {
       float: left;
       padding-top: 10px;

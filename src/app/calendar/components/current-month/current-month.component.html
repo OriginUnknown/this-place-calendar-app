@@ -1,7 +1,7 @@
 <div class="month"> 
     <ul>
-      <li class="prev">&#10094;</li>
+      <li class="prev" (click)="onGetPrevMonth()">&#10094;</li>
       <li>{{ currentMonth }} {{ currentYear }}</li>
-      <li class="next">&#10095;</li>
+      <li class="next" (click)="onGetNextMonth()">&#10095;</li>
     </ul>
   </div>
